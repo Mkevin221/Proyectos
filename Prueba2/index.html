@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login y Registro</title>
+  <link rel="stylesheet" href="../Prueba2/css/index.css" />
+</head>
+<body>
+  <div class="background-shape shape-1"></div>
+  <div class="background-shape shape-2"></div>
+
+  <div class="container" id="container">
+    <!-- REGISTRO -->
+    <div class="form-container sign-up-container">
+      <form action="#" method="POST" autocomplete="off">
+        <h1>Crear cuenta</h1>
+        <p class="subtitle">Regístrate para comenzar</p>
+
+        <div class="social-container">
+          <a href="#" class="social" aria-label="Google">G</a>
+          <a href="#" class="social" aria-label="Facebook">f</a>
+          <a href="#" class="social" aria-label="LinkedIn">in</a>
+        </div>
+
+        <span>o usa tu correo electrónico</span>
+
+        <input type="text" name="nombre" placeholder="Nombre completo" required />
+        <input type="email" name="email" placeholder="Correo electrónico" required />
+        <input type="password" name="password" placeholder="Contraseña" required />
+
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="form-container sign-in-container">
+      <form action="#" method="POST" autocomplete="off">
+        <h1>Iniciar sesión</h1>
+        <p class="subtitle">Qué bueno verte de nuevo</p>
+
+        <div class="social-container">
+          <a href="#" class="social" aria-label="Google">G</a>
+          <a href="#" class="social" aria-label="Facebook">f</a>
+          <a href="#" class="social" aria-label="LinkedIn">in</a>
+        </div>
+
+        <span>o usa tu cuenta registrada</span>
+
+        <input type="email" name="email" placeholder="Correo electrónico" required />
+        <input type="password" name="password" placeholder="Contraseña" required />
+        <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+
+    <!-- PANEL DERECHO/IZQUIERDO -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>¡Bienvenido otra vez!</h1>
+          <p>
+            Inicia sesión con tus datos para continuar disfrutando de la plataforma.
+          </p>
+          <button class="ghost" id="signIn" type="button">Iniciar sesión</button>
+        </div>
+
+        <div class="overlay-panel overlay-right">
+          <h1>¡Hola, amigo!</h1>
+          <p>
+            Crea tu cuenta y empieza una nueva experiencia con un diseño moderno.
+          </p>
+          <button class="ghost" id="signUp" type="button">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../Prueba2/js/login.js"></script>
+</body>
+</html>
