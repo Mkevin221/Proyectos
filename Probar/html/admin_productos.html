@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaElectro | Admin - Productos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/administrador.css" />
+</head>
+<body>
+
+  <main class="admin-page">
+    <header class="admin-header card">
+      <div>
+        <h1>Inventario</h1>
+        <p class="muted">Crea productos y publícalos en el menú principal.</p>
+      </div>
+      <div class="header-actions">
+        <a class="btn-outline" href="administrador.html">← Volver</a>
+        <button class="btn-outline" id="adminLogoutBtn" type="button">🚪 Cerrar sesión</button>
+      </div>
+    </header>
+
+    <section class="admin-grid">
+     <!-- NUEVO PRODUCTO -->
+<div class="card">
+  <h2>Nuevo producto</h2>
+
+  <div class="form">
+    <label>Nombre</label>
+    <input class="input" id="pName" type="text" placeholder="Ej: Televisor 50''" />
+
+    <!-- ✅ NUEVO: Serial/Modelo -->
+    <label>Serial / Modelo</label>
+    <input class="input" id="pModel" type="text" placeholder="Ej: UN50AU7000 / LG-WT18" />
+
+    <label>Descripción</label>
+    <input class="input" id="pDesc" type="text" placeholder="Ej: 4K UHD, Smart TV" />
+
+    <label>Precio (COP)</label>
+    <input class="input" id="pPrice" type="number" placeholder="Ej: 1899000" />
+
+    <label>Categoría</label>
+    <input class="input" id="pCategory" type="text" placeholder="Ej: Televisores" />
+
+    <label>Stock</label>
+    <input class="input" id="pStock" type="number" placeholder="Ej: 20" />
+
+    <!-- ✅ NUEVO: Imagen del producto -->
+    <label>Imagen del producto</label>
+    <div class="actions">
+      <button class="btn-outline" type="button" id="pickImageBtn">📷 Elegir imagen</button>
+      <input id="pImageFile" type="file" accept="image/*" style="display:none;">
+    </div>
+
+    <!-- Preview -->
+    <img id="pPreview" alt="Vista previa"
+      style="display:none; margin-top:10px; width:100%; max-width:320px; border-radius:14px; border:1px solid #e2e8f0;" />
+
+    <!-- ✅ OPCIONAL: URL de imagen -->
+    <label style="margin-top:10px;">o URL de imagen (opcional)</label>
+    <input class="input" id="pImageUrl" type="url" placeholder="https://..." />
+
+    <label>
+      <input type="checkbox" id="pPublished" checked />
+      Publicar en el menú principal
+    </label>
+
+    <div class="actions">
+      <button class="btn-solid" id="createProductBtn" type="button">Guardar producto</button>
+      <button class="btn-outline" id="clearProductBtn" type="button">Limpiar</button>
+    </div>
+  </div>
+</div>
+
+      <div class="card">
+        <h2>Productos</h2>
+        <div class="table" id="productsTable"></div>
+        <p class="muted" id="productsEmpty" style="display:none;">Aún no hay productos.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/admin_productos.js"></script>
+</body>
+</html>

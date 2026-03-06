@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaElectro - Productos</title>
+  <link rel="stylesheet" href="../css/bus_pedidos.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">Nova<span>Electro</span></a>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Inicio</a>
+      <a href="categorias.html">Categorías</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="mas_vendidos.html">Mas vendidos</a>
+      <a href="marcas.html">Marcas</a>
+    </nav>
+
+    <form class="search-box" action="bus_pedidos.html" method="GET">
+      <input type="text" name="buscar" id="searchInput" placeholder="Buscar productos..." required>
+      <button type="submit">🔍</button>
+    </form>
+
+    <div class="nav-actions">
+      <a href="carrito.html" class="cart-btn">🛒 Carrito</a>
+
+      <div class="user-box">
+        <div class="user-avatar">K</div>
+        <span>kevinmoster</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="products-page">
+    <section class="products-header">
+      <h1>Productos</h1>
+      <p id="searchText">Explora nuestro catálogo de productos.</p>
+    </section>
+
+    <section class="products-grid" id="productsGrid">
+      <!-- Aquí se insertan los productos -->
+    </section>
+
+    <section id="noResults" class="no-results" style="display: none;">
+      <h2>No encontramos productos</h2>
+      <p>Intenta con otro nombre, marca o categoría.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 NovaElectro. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="../js/busqued_productos.js"></script>
+
+</body>
+</html>

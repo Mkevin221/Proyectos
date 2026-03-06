@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaElectro | Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/menu_principal.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Nova<span>Electro</span></div>
+
+    <div class="nav-center">
+      <a href="#">Inicio</a>
+      <a href="#">Categorías</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Mas vendidos</a>
+      <a href="#">Marcas</a>
+    </div>
+
+    <form class="search-box" action="productos.html" method="GET">
+      <input type="text" name="buscar" placeholder="Buscar productos..." required>
+      <button type="submit">🔍</button>
+    </form>
+
+    <div class="nav-actions">
+      <a class="btn-outline cart-btn" id="cartBtn" href="carrito.html"> 🛒 Carrito
+      <span class="cart-badge" id="cartBadge"></span>
+</a>
+
+      <div class="user-menu">
+        <button class="user-btn" onclick="toggleUserMenu()">
+          <span class="user-avatar" id="userInitial">U</span>
+          <span id="userName">Usuario</span>
+          <span class="arrow">▾</span>
+        </button>
+
+        <div class="user-dropdown" id="userDropdown">
+          <a href="perfil_user.html">👤 Mi perfil</a>
+          <a href="pedidos.html">📦 Mis pedidos</a>
+          <a href="#">⚙️ Configuración</a>
+          <button onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-main">
+      <span class="badge" id="saludoUsuario">Bienvenido a NovaElectro</span>
+      <h1>Electrodomésticos modernos para un hogar inteligente</h1>
+      <p>
+        Encuentra televisores, neveras, lavadoras, microondas y mucho más con
+        un diseño de compra simple, elegante y pensado para ofrecer la mejor experiencia.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-solid">Comprar ahora</button>
+        <button class="btn-outline">Explorar catálogo</button>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="mini-card">
+        <div>
+          <h3>⚡ Ofertas Flash</h3>
+          <p>Descuentos especiales en productos seleccionados por tiempo limitado.</p>
+        </div>
+        <strong>Hasta 40% OFF</strong>
+      </div>
+
+      <div class="mini-card">
+        <div>
+          <h3>🚚 Entrega Rápida</h3>
+          <p>Recibe tus pedidos con seguimiento y atención personalizada.</p>
+        </div>
+        <strong>24 a 48 horas</strong>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="section-header">
+    <div>
+      <h2>Productos</h2>
+      <p>Catálogo cargado desde el inventario del administrador.</p>
+    </div>
+  </div>
+
+  <div class="products" id="productsContainer"></div>
+  </main>
+
+  <footer>
+    © 2026 NovaElectro. Todos los derechos reservados.
+  </footer>
+
+  <!-- ===== Drawer detalle del producto ===== -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="drawer" id="productDrawer" aria-hidden="true">
+  <button class="drawer-close" id="drawerClose" type="button" aria-label="Cerrar">✕</button>
+
+  <div class="drawer-media" id="drawerMedia"></div>
+
+  <div class="drawer-body">
+    <div class="drawer-top">
+      <div>
+        <h3 class="drawer-title" id="drawerTitle">Producto</h3>
+        <p class="drawer-sub" id="drawerMeta">Modelo • Categoría</p>
+      </div>
+      <div class="drawer-price" id="drawerPrice">$0</div>
+    </div>
+
+    <p class="drawer-desc" id="drawerDesc">Descripción del producto…</p>
+
+    <div class="drawer-row">
+      <span class="drawer-stock" id="drawerStock">Stock: 0</span>
+      <span class="drawer-badge" id="drawerBadge">Disponible</span>
+    </div>
+
+    <div class="drawer-actions">
+      <div class="qty">
+        <button class="qty-btn" id="qtyMinus" type="button">−</button>
+        <input class="qty-input" id="qtyInput" type="number" min="1" value="1" />
+        <button class="qty-btn" id="qtyPlus" type="button">+</button>
+      </div>
+
+      <button class="btn-solid drawer-add" id="drawerAddBtn" type="button">
+        Agregar al carrito
+      </button>
+    </div>
+  </div>
+</aside>
+
+  <script src="../js/menu.js"></script>
+  <script src="../js/menu_productos.js"></script>
+  <script src="../js/cart_core.js"></script>
+  <script src="../js/busqued_productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaElectro | Admin - Usuarios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/administrador.css" />
+</head>
+<body>
+
+  <main class="admin-page">
+    <header class="admin-header card">
+      <div>
+        <h1>Usuarios registrados</h1>
+        <p class="muted">Suspende, elimina o actualiza usuarios.</p>
+      </div>
+      <div class="header-actions">
+        <a class="btn-outline" href="administrador.html">← Volver</a>
+        <button class="btn-outline" id="adminLogoutBtn" type="button">🚪 Cerrar sesión</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="searchUser" class="input" type="text" placeholder="Buscar por nombre o correo..." />
+        <select id="filterStatus" class="input">
+          <option value="all">Todos</option>
+          <option value="active">Activos</option>
+          <option value="suspended">Suspendidos</option>
+        </select>
+      </div>
+
+      <div class="table" id="usersTable"></div>
+      <p class="muted" id="usersEmpty" style="display:none;">No hay usuarios para mostrar.</p>
+    </section>
+  </main>
+
+  <script src="../js/admin_usuarios.js"></script>
+</body>
+</html>

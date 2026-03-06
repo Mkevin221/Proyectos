@@ -1,0 +1,100 @@
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#ffffff;
+  color:#0f172a;
+  line-height:1.5;
+}
+
+.orders-page{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 28px 6%;
+}
+
+.muted{ color:#64748b; font-size:14px; line-height:1.6; }
+
+.orders-header{
+  display:flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.orders-header h1{ font-size: 32px; margin-bottom: 6px; }
+
+.btn-outline{
+  border:none;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color:#0f172a;
+  padding: 10px 14px;
+  border-radius: 14px;
+  cursor:pointer;
+  font-weight: 700;
+  transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease, border-color .25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-outline:hover{
+  background:#f8fafc;
+  transform: translateY(-1px);
+}
+
+.orders-filters{ display:flex; gap: 10px; flex-wrap: wrap; }
+
+.filter.active{
+  background:#eff6ff;
+  border-color: rgba(37,99,235,.18);
+  color:#2563eb;
+}
+
+.card{
+  background:#fff;
+  border:1px solid rgba(59,130,246,0.12);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 10px 25px rgba(15,23,42,0.04);
+}
+
+.order-row{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 14px;
+  padding: 14px 10px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.order-row:last-child{ border-bottom:none; }
+
+.order-meta h3{ font-size: 16px; margin-bottom: 4px; }
+.order-meta p{ color:#64748b; font-size: 13px; }
+
+.badge{
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.badge.entregado{ background:#ecfdf5; border-color:#86efac; color:#166534; }
+.badge.en_camino{ background:#eff6ff; border-color:#93c5fd; color:#1d4ed8; }
+
+.back-link{
+  margin-top: 16px;
+}
+
+@media (max-width: 600px){
+  .orders-page{ padding: 22px 4%; }
+  .order-row{ align-items: flex-start; }
+}

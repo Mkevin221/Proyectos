@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login y Registro</title>
+  <!-- ✅ ARCHIVO Css CONECTADO -->
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+  <!-- ✅ CONTENEDOR PRINCIPAL para la animación login/registro -->
+  <div class="container" id="container">
+    <div class="forms-container">
+
+      <!-- ✅ FORMULARIO DE LOGIN IMPLEMENTADO -->
+      <div class="form-box login">
+        <form id="loginForm" novalidate>
+          <h2>Iniciar sesión</h2>
+          <p>Ingresa tus datos para acceder a tu cuenta.</p>
+
+          <!-- ✅ INPUT LOGIN EMAIL IMPLEMENTADO -->
+          <input
+            type="email"
+            id="loginEmail"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+            maxlength="100"
+            autocomplete="email"
+          />
+
+          <!-- ✅ INPUT LOGIN PASSWORD IMPLEMENTADO -->
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            placeholder="Contraseña"
+            required
+            minlength="8"
+            maxlength="64"
+            autocomplete="current-password"
+          />
+
+          <a href="#" class="small-link">¿Olvidaste tu contraseña?</a>
+
+          <!-- ✅ BOTÓN LOGIN IMPLEMENTADO -->
+          <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+      </div>
+
+      <!-- ✅ FORMULARIO DE REGISTRO IMPLEMENTADO -->
+      <div class="form-box register">
+        <form id="registerForm" novalidate>
+          <h2>Crear cuenta</h2>
+          <p>Regístrate para comenzar a usar la plataforma.</p>
+
+          <!-- ✅ INPUT NOMBRE IMPLEMENTADO -->
+          <input
+            type="text"
+            id="registerName"
+            name="fullname"
+            placeholder="Nombre completo"
+            required
+            minlength="3"
+            maxlength="60"
+            pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
+            title="Solo letras y espacios"
+            autocomplete="name"
+          />
+
+          <!-- ✅ INPUT EMAIL REGISTRO IMPLEMENTADO -->
+          <input
+            type="email"
+            id="registerEmail"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+            maxlength="100"
+            autocomplete="email"
+          />
+
+          <!-- ✅ INPUT CONTRASEÑA REGISTRO IMPLEMENTADO -->
+          <input
+            type="password"
+            id="registerPassword"
+            name="password"
+            placeholder="Contraseña"
+            required
+            minlength="8"
+            maxlength="64"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,64}$"
+            title="Debe tener entre 8 y 64 caracteres, una mayúscula, una minúscula, un número y un símbolo"
+            autocomplete="new-password"
+          />
+
+          <!-- ✅ INPUT CONFIRMAR CONTRASEÑA IMPLEMENTADO -->
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirmar contraseña"
+            required
+            minlength="8"
+            maxlength="64"
+            autocomplete="new-password"
+          />
+
+          <!-- ✅ BOTÓN REGISTRO IMPLEMENTADO -->
+          <button type="submit" class="btn-primary">Registrarse</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ✅ PANEL DE TRANSICIÓN IMPLEMENTADO -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h2>¡Bienvenido!</h2>
+          <p>Si ya tienes una cuenta, inicia sesión aquí.</p>
+
+          <!-- ✅ BOTÓN PARA CAMBIAR A LOGIN IMPLEMENTADO -->
+          <button class="btn-outline" id="loginBtn" type="button">Iniciar sesión</button>
+        </div>
+
+        <div class="overlay-panel overlay-right">
+          <h2>Hola, amigo</h2>
+          <p>Si todavía no tienes cuenta, regístrate para continuar.</p>
+
+          <!-- ✅ BOTÓN PARA CAMBIAR A REGISTRO IMPLEMENTADO -->
+          <button class="btn-outline" id="registerBtn" type="button">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ TOAST PREPARADO -->
+  <div id="toast" class="toast"></div>
+
+  <!-- ✅ ARCHIVO JS CONECTADO -->
+  <script src="../js/transicion.js"></script>
+</body>
+</html>

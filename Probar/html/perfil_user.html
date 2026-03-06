@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaElectro | Mi Perfil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/perfil_user.css" />
+</head>
+<body>
+
+  <main class="profile-page">
+    <aside class="profile-sidebar reveal">
+      <div class="profile-card">
+        <div class="profile-avatar" id="profileAvatar" aria-hidden="true">U</div>
+        <div class="profile-user-info">
+          <h3 id="profileUserName">Usuario</h3>
+          <p id="profileUserEmail">usuario@email.com</p>
+        </div>
+      </div>
+
+      <button class="logout-btn" id="logoutBtn" type="button">🚪 Cerrar sesión</button>
+      <button class="logout-btn" id="backHomeBtn" type="button">← Volver a inicio</button>
+    </aside>
+
+    <section class="profile-content">
+      <header class="profile-header reveal">
+        <div>
+          <h1>Mi perfil</h1>
+          <p class="muted">
+            Administra tus datos personales y preferencias de tu cuenta.
+          </p>
+        </div>
+
+
+        <button class="btn-outline" type="button" id="editProfileBtn">
+          Editar perfil
+        </button>
+      </header>
+
+      <div class="profile-grid">
+        <section class="card card--wide reveal">
+          <h2>Información personal</h2>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" type="text" value="Usuario" placeholder="Tu nombre completo" />
+            </div>
+
+            <div class="field">
+              <label for="correo">Correo</label>
+              <input id="correo" type="email" value="usuario@email.com" placeholder="correo@ejemplo.com" />
+            </div>
+
+            <div class="field">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" type="tel" placeholder="+57 300 000 0000" />
+            </div>
+
+            <div class="field">
+              <label for="documento">Documento</label>
+              <input id="documento" type="text" placeholder="Número de identificación" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn-solid" type="button" id="saveBtn">Guardar cambios</button>
+            <button class="btn-outline" type="button" id="cancelBtn">Cancelar</button>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <h2>Dirección principal</h2>
+          <p class="muted">No tienes una dirección principal guardada actualmente.</p>
+          <button class="btn-outline" type="button">Agregar dirección</button>
+        </section>
+
+        <section class="card reveal">
+          <h2>Seguridad</h2>
+          <p class="muted">Actualiza tu contraseña y mantén protegida tu cuenta.</p>
+          <button class="btn-outline" type="button">Cambiar contraseña</button>
+        </section>
+
+        <section class="card reveal">
+          <h2>Resumen</h2>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Pedidos</span>
+            </div>
+
+            <div class="stat">
+              <span class="stat-num">1</span>
+              <span class="stat-label">En camino</span>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="card reveal">
+          <h2>Último pedido</h2>
+
+          <p class="muted" id="lastOrderInfo">Cargando tu último pedido...</p>
+
+          <div class="actions">
+          <button class="btn-solid" type="button" id="viewLastOrderBtn">Ver pedido</button>
+          <a class="btn-outline" href="pedidos.html">Ver todos mis pedidos</a>
+          </div>
+          </section>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/perfil_user.js"></script>
+</body>
+</html>

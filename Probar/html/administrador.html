@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaElectro | Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/administrador.css" />
+</head>
+<body>
+
+  <main class="admin-page">
+    <header class="admin-header card">
+      <div>
+        <h1>Panel de Administrador</h1>
+        <p class="muted">Gestiona usuarios e inventario de NovaElectro.</p>
+      </div>
+      <button class="btn-outline" id="adminLogoutBtn" type="button">🚪 Cerrar sesión</button>
+    </header>
+
+    <section class="admin-grid">
+      <div class="card">
+        <h2>Usuarios</h2>
+        <p class="muted" id="usersCount">Cargando...</p>
+        <a class="btn-solid" href="admin_usuarios.html">Ver usuarios</a>
+      </div>
+
+      <div class="card">
+        <h2>Productos</h2>
+        <p class="muted" id="productsCount">Cargando...</p>
+        <a class="btn-solid" href="admin_productos.html">Gestionar productos</a>
+      </div>
+
+      <div class="card">
+        <h2>Estado</h2>
+        <p class="muted" id="activeSessionInfo">Cargando...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/administrador.js"></script>
+</body>
+</html>

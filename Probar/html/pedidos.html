@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaElectro | Mis pedidos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/pedidos.css" />
+</head>
+<body>
+
+  <main class="orders-page">
+    <header class="orders-header">
+      <div>
+        <h1>Mis pedidos</h1>
+        <p class="muted">Consulta el estado y los detalles de tus compras.</p>
+      </div>
+
+      <div class="orders-filters">
+        <button class="btn-outline filter active" data-filter="todos" type="button">Todos</button>
+        <button class="btn-outline filter" data-filter="en_camino" type="button">En camino</button>
+        <button class="btn-outline filter" data-filter="entregado" type="button">Entregados</button>
+      </div>
+    </header>
+
+    <section class="card orders-list" id="ordersList">
+      <!-- Render JS -->
+    </section>
+
+    <a class="btn-outline back-link" href="perfil_user.html">← Volver al perfil</a>
+  </main>
+
+  <script src="../js/pedidos.js"></script>
+</body>
+</html>
