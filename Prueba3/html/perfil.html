@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELECTROSHOP | Mi perfil</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <div class="user-menu">
+        <button class="user-menu-btn" id="userMenuToggle" type="button">
+          <div class="user-avatar">J</div>
+          <div class="user-data">
+            <strong>José</strong>
+            <span>Mi cuenta</span>
+          </div>
+        </button>
+
+        <div class="user-dropdown" id="userDropdown">
+          <a href="perfil.html">Mi perfil</a>
+          <a href="pedidos.html">Mis pedidos</a>
+          <a href="configuracion.html">Configuración</a>
+          <a href="login.html">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <div>
+          <span class="page-tag">Mi cuenta</span>
+          <h1>Perfil del usuario</h1>
+          <p>
+            Consulta y administra tu información personal dentro de ELECTROSHOP.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-section">
+      <div class="container profile-grid">
+        <aside class="profile-sidebar">
+          <div class="profile-user-card">
+            <div class="profile-avatar">J</div>
+            <h2>José Enrique</h2>
+            <p>Cliente registrado</p>
+          </div>
+
+          <nav class="profile-menu">
+            <a href="#info-personal" class="active">Información personal</a>
+            <a href="#resumen-cuenta">Resumen de cuenta</a>
+            <a href="#direcciones">Direcciones</a>
+            <a href="#seguridad">Seguridad</a>
+            <a href="login.html">Cerrar sesión</a>
+          </nav>
+        </aside>
+
+        <div class="profile-content">
+          <div class="profile-box" id="info-personal">
+            <div class="profile-box-header">
+              <h2>Información personal</h2>
+              <button class="btn btn-light" type="button">Editar perfil</button>
+            </div>
+
+            <div class="profile-info-grid">
+              <div class="profile-info-item">
+                <span>Nombre completo</span>
+                <strong>José Enrique Florez</strong>
+              </div>
+
+              <div class="profile-info-item">
+                <span>Correo electrónico</span>
+                <strong>usuario@correo.com</strong>
+              </div>
+
+              <div class="profile-info-item">
+                <span>Teléfono</span>
+                <strong>+57 300 000 0000</strong>
+              </div>
+
+              <div class="profile-info-item">
+                <span>Ciudad</span>
+                <strong>Medellín, Colombia</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-box" id="resumen-cuenta">
+            <div class="profile-box-header">
+              <h2>Resumen de cuenta</h2>
+            </div>
+
+            <div class="profile-summary-grid">
+              <div class="summary-card">
+                <h3>Pedidos</h3>
+                <p>0 registrados</p>
+              </div>
+
+              <div class="summary-card">
+                <h3>Direcciones</h3>
+                <p>1 guardada</p>
+              </div>
+
+              <div class="summary-card">
+                <h3>Estado</h3>
+                <p>Cuenta activa</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-box" id="direcciones">
+            <div class="profile-box-header">
+              <h2>Direcciones</h2>
+              <button class="btn btn-light" type="button">Agregar dirección</button>
+            </div>
+
+            <div class="profile-address-card">
+              <h3>Dirección principal</h3>
+              <p>Calle 00 #00-00, Medellín, Antioquia</p>
+              <span>Referencia: Dirección de ejemplo para el perfil del usuario.</span>
+            </div>
+          </div>
+
+          <div class="profile-box" id="seguridad">
+            <div class="profile-box-header">
+              <h2>Seguridad</h2>
+            </div>
+
+            <div class="profile-security-grid">
+              <div class="security-card">
+                <h3>Contraseña</h3>
+                <p>Actualiza tu contraseña periódicamente para mantener tu cuenta segura.</p>
+                <button class="btn btn-light" type="button">Cambiar contraseña</button>
+              </div>
+
+              <div class="security-card">
+                <h3>Sesión</h3>
+                <p>Administra el acceso de tu cuenta y cierra sesión cuando lo necesites.</p>
+                <a href="login.html" class="btn btn-primary">Cerrar sesión</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-box">
+            <div class="profile-box-header">
+              <h2>Acciones rápidas</h2>
+            </div>
+
+            <div class="profile-actions">
+              <a href="productos.html" class="btn btn-primary">Ver productos</a>
+              <a href="contacto.html" class="btn btn-light">Contactar asesor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="../js/app_web.js"></script>
+</body>
+</html>
