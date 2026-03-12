@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELECTROSHOP | Televisores</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html" class="active">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="carrito.html" class="btn btn-primary">🛒Carrito</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <div>
+          <span class="page-tag">Categoría · Televisores</span>
+          <h1>Televisores para vivir una mejor experiencia</h1>
+          <p>
+            Encuentra televisores disponibles en inventario con diseño moderno, excelente calidad de imagen
+            y opciones para cada espacio de tu hogar o negocio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-box">
+          <a href="#" class="filter-chip active-chip" data-filter="todos">Todos</a>
+          <a href="#" class="filter-chip" data-filter="hisense">Hisense</a>
+          <a href="#" class="filter-chip" data-filter="samsung">Samsung</a>
+          <a href="#" class="filter-chip" data-filter="lg">LG</a>
+          <a href="#" class="filter-chip" data-filter="4k">4K</a>
+          <a href="#" class="filter-chip" data-filter="smarttv">Smart TV</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Televisores destacados</h2>
+          <p>
+            Esta sección se alimenta automáticamente desde el inventario de televisores y permite filtrarlos por marca o característica.
+          </p>
+        </div>
+
+        <div class="product-grid" id="televisoresGrid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Más vendidos en televisores</h2>
+          <p>
+            Aquí verás los televisores con mayor rotación según las compras registradas.
+          </p>
+        </div>
+
+        <div class="featured-grid" id="televisoresFeaturedGrid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-strip">
+      <div class="container benefits-strip-grid">
+        <div class="mini-benefit-card">
+          <h3>Marcas reconocidas</h3>
+          <p>Televisores Hisense, Samsung y LG con gran aceptación en el mercado.</p>
+        </div>
+        <div class="mini-benefit-card">
+          <h3>Diferentes tamaños</h3>
+          <p>Opciones para habitaciones, salas, negocios y espacios más amplios.</p>
+        </div>
+        <div class="mini-benefit-card">
+          <h3>Asesoría de compra</h3>
+          <p>Te orientamos según presupuesto, tamaño y tipo de uso que necesitas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-box">
+        <h2>¿Buscas el televisor ideal?</h2>
+        <p>
+          Escríbenos y te ayudamos a elegir el modelo perfecto para tu hogar, oficina o negocio.
+        </p>
+        <a href="contacto.html" class="btn btn-primary">Hablar con un asesor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3>ELECTROSHOP</h3>
+        <p>Televisores, soportes y electrodomésticos para tu hogar.</p>
+      </div>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/app_web.js"></script>
+  <script src="../js/televisores_store.js"></script>
+</body>
+</html>

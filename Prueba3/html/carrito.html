@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito - ELECTROSHOP</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">ELECTRO<span>SHOP</span></div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="beneficios.html">Beneficios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <a href="carrito.html" class="btn btn-primary">Carrito</a>
+  </div>
+</header>
+
+<main>
+  <section class="cart-modern container">
+    <h1>Tu Carrito de Compras</h1>
+
+    <div class="cart-wrapper">
+
+      <!-- LISTA DINÁMICA -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Se llena con JS -->
+      </div>
+
+      <!-- RESUMEN -->
+      <div class="cart-summary" id="cartSummary">
+        <h2>Resumen de pedido</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">$0</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Envío</span>
+          <span>Gratis</span>
+        </div>
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="cart-total">$0</span>
+        </div>
+
+        <button class="btn btn-primary btn-full" id="checkoutBtn">Proceder al pago</button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <p>© 2026 Todos los derechos reservados | ELECTROSHOP</p>
+  </div>
+</footer>
+
+<script src="../js/store.js"></script>
+<script src="../js/app_web.js"></script>
+<script src="../js/universal.js"></script>
+<script src="../js/carrito_store.js"></script>
+
+</body>
+</html>

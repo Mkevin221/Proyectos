@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELECTROSHOP | Neveras</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html" class="active">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="carrito.html" class="btn btn-primary">🛒Carrito</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <div>
+          <span class="page-tag">Categoría · Neveras</span>
+          <h1>Neveras para cada espacio y necesidad</h1>
+          <p>
+            Descubre neveras modernas, funcionales y con excelente capacidad para tu hogar.
+            En ELECTROSHOP encuentras opciones prácticas, elegantes y pensadas para facilitar tu día a día.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-box">
+          <a href="#" class="filter-chip active-chip" data-filter="todos">Todas</a>
+          <a href="#" class="filter-chip" data-filter="no-frost">No Frost</a>
+          <a href="#" class="filter-chip" data-filter="dos-puertas">Dos puertas</a>
+          <a href="#" class="filter-chip" data-filter="compactas">Compactas</a>
+          <a href="#" class="filter-chip" data-filter="familiares">Familiares</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nuestras neveras destacadas</h2>
+          <p>
+            Esta sección se alimenta automáticamente desde el inventario de neveras y permite filtrarlas por tipo o característica.
+          </p>
+        </div>
+
+        <div class="product-grid" id="neverasGrid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Más vendidas en neveras</h2>
+          <p>
+            Aquí verás las neveras con mayor rotación según las compras registradas.
+          </p>
+        </div>
+
+        <div class="featured-grid" id="neverasFeaturedGrid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-strip">
+      <div class="container benefits-strip-grid">
+        <div class="mini-benefit-card">
+          <h3>Más capacidad</h3>
+          <p>Modelos para hogares pequeños, medianos y grandes.</p>
+        </div>
+        <div class="mini-benefit-card">
+          <h3>Diseño moderno</h3>
+          <p>Neveras con acabados elegantes para diferentes estilos de cocina.</p>
+        </div>
+        <div class="mini-benefit-card">
+          <h3>Asesoría personalizada</h3>
+          <p>Te ayudamos a elegir la nevera ideal según tu espacio y presupuesto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-box">
+        <h2>¿No sabes cuál nevera elegir?</h2>
+        <p>
+          Escríbenos y te ayudamos a escoger la opción ideal para tu hogar, negocio o proyecto.
+        </p>
+        <a href="contacto.html" class="btn btn-primary">Hablar con un asesor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3>ELECTROSHOP</h3>
+        <p>Televisores, soportes y electrodomésticos para tu hogar.</p>
+      </div>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/app_web.js"></script>
+  <script src="../js/neveras_store.js"></script>
+</body>
+</html>

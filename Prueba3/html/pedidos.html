@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELECTROSHOP | Mis pedidos</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <div class="user-menu">
+        <button class="user-menu-btn" id="userMenuToggle" type="button">
+          <div class="user-avatar" id="userAvatar"></div>
+          <div class="user-data">
+            <strong id="userName"></strong>
+            <span>Mi cuenta</span>
+          </div>
+        </button>
+
+        <div class="user-dropdown" id="userDropdown">
+          <a href="perfil.html">Mi perfil</a>
+          <a href="pedidos.html" class="active">Mis pedidos</a>
+          <a href="configuracion.html">Configuración</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="orders-page">
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <div>
+          <span class="page-tag">Mi cuenta</span>
+          <h1>Mis pedidos</h1>
+          <p>
+            Consulta el estado de tus compras, revisa el detalle de cada pedido y mantente al tanto de tu proceso en ELECTROSHOP.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="orders-section">
+      <div class="container orders-grid">
+        <aside class="profile-sidebar">
+          <div class="profile-user-card">
+            <div class="profile-avatar" id="profileAvatar"></div>
+            <h2 id="profileName"></h2>
+            <p>Cliente registrado</p>
+          </div>
+
+          <nav class="profile-menu">
+            <a href="perfil.html">Información personal</a>
+            <a href="pedidos.html" class="active">Mis pedidos</a>
+            <a href="perfil.html#direcciones">Direcciones</a>
+          </nav>
+        </aside>
+
+        <div class="orders-content">
+          <div class="orders-box">
+            <div class="profile-box-header">
+              <h2>Resumen de pedidos</h2>
+            </div>
+
+            <div class="orders-summary-grid">
+              <div class="summary-card">
+                <h3>Total pedidos</h3>
+                <p>3 registrados</p>
+              </div>
+
+              <div class="summary-card">
+                <h3>En proceso</h3>
+                <p>1 pedido</p>
+              </div>
+
+              <div class="summary-card">
+                <h3>Entregados</h3>
+                <p>2 pedidos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="orders-box">
+            <div class="profile-box-header">
+              <h2>Historial</h2>
+            </div>
+
+            <div class="orders-list" id="ordersList">
+              <!-- Los pedidos se cargarán aquí dinámicamente -->
+            </div>
+          </div>
+
+          <div class="orders-box">
+            <div class="profile-box-header">
+              <h2>Acciones rápidas</h2>
+            </div>
+
+            <div class="profile-actions">
+              <a href="productos.html" class="btn btn-primary">Seguir comprando</a>
+              <a href="contacto.html" class="btn btn-light">Contactar asesor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app_web.js" defer></script>
+  <script src="../js/universal.js"></script>
+
+</body>
+</html>

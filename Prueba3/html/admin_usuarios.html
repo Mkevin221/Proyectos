@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración | ElectroShop</title>
+  <link rel="stylesheet" href="../css/admin_usuarios.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#" class="active">Administración</a></li>
+      </ul>
+
+      <div class="admin-user">
+        <div class="admin-avatar">A</div>
+        <div class="admin-data">
+          <strong>Administrador</strong>
+          <span>Panel de control</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       BANNER
+  ========================== -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="page-banner-content">
+        <div>
+          <span class="page-tag">Gestión interna</span>
+          <h1>Administración de usuarios e inventario</h1>
+          <p>
+            Controla los usuarios registrados, consulta el inventario disponible,
+            revisa el stock de productos y mantén el panel organizado de forma clara y rápida.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       PANEL
+  ========================== -->
+  <section class="admin-panel-section">
+    <div class="container admin-layout">
+
+      <!-- ========= SIDEBAR ========= -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-card">
+          <h3>Panel administrativo</h3>
+          <p>Accesos rápidos del sistema.</p>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="#resumen" class="active"><i class="fa-solid fa-chart-line"></i> Resumen</a>
+          <a href="#usuarios"><i class="fa-solid fa-users"></i> Usuarios</a>
+          <a href="#inventario"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a>
+          <a href="#acciones"><i class="fa-solid fa-sliders"></i> Acciones rápidas</a>
+        </nav>
+      </aside>
+
+      <!-- ========= CONTENIDO ========= -->
+      <div class="admin-content">
+
+        <!-- =========================
+             RESUMEN
+        ========================== -->
+        <section id="resumen" class="admin-box">
+          <div class="box-header">
+            <div>
+              <span class="section-label">Resumen general</span>
+              <h2>Vista rápida del sistema</h2>
+            </div>
+          </div>
+
+          <div class="summary-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-user-check"></i></div>
+              <div>
+                <h3 id="totalUsers">0</h3>
+                <p>Usuarios registrados</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <div>
+                <h3 id="totalAdmins">0</h3>
+                <p>Administradores</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-box-open"></i></div>
+              <div>
+                <h3 id="totalProducts">0</h3>
+                <p>Productos en inventario</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div>
+                <h3 id="lowStockCount">0</h3>
+                <p>Productos con stock bajo</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             USUARIOS
+        ========================== -->
+        <section id="usuarios" class="admin-box">
+          <div class="box-header">
+            <div>
+              <span class="section-label">Gestión de usuarios</span>
+              <h2>Usuarios registrados</h2>
+            </div>
+            <button class="btn btn-primary" id="openUserModal">
+              <i class="fa-solid fa-user-plus"></i> Nuevo usuario
+            </button>
+          </div>
+
+          <div class="table-tools">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="userSearch" placeholder="Buscar por nombre, correo o rol..." />
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Rol</th>
+                  <th>Estado</th>
+                  <th>Registro</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- =========================
+             INVENTARIO
+        ========================== -->
+        <section id="inventario" class="admin-box">
+          <div class="box-header">
+            <div>
+              <span class="section-label">Control de inventario</span>
+              <h2>Inventario registrado</h2>
+            </div>
+            <button class="btn btn-primary" id="openProductModal">
+              <i class="fa-solid fa-plus"></i> Nuevo producto
+            </button>
+          </div>
+
+          <div class="table-tools two-columns">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="productSearch" placeholder="Buscar producto o categoría..." />
+            </div>
+
+            <select id="stockFilter">
+              <option value="all">Todos los productos</option>
+              <option value="low">Stock bajo</option>
+              <option value="available">Disponibles</option>
+              <option value="out">Agotados</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Producto</th>
+                  <th>Categoría</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Ubicación</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="productsTableBody">
+                <!-- JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- =========================
+             ACCIONES RÁPIDAS
+        ========================== -->
+        <section id="acciones" class="admin-box">
+          <div class="box-header">
+            <div>
+              <span class="section-label">Acciones rápidas</span>
+              <h2>Herramientas del panel</h2>
+            </div>
+          </div>
+
+          <div class="quick-actions-grid">
+            <div class="quick-card">
+              <i class="fa-solid fa-file-export"></i>
+              <h3>Exportar usuarios</h3>
+              <p>Genera una consulta rápida para respaldar la lista de usuarios.</p>
+              <button class="btn btn-light" id="exportUsersBtn">Exportar</button>
+            </div>
+
+            <div class="quick-card">
+              <i class="fa-solid fa-warehouse"></i>
+              <h3>Revisar inventario</h3>
+              <p>Consulta rápidamente productos con bajo stock o agotados.</p>
+              <button class="btn btn-light" id="reviewStockBtn">Revisar stock</button>
+            </div>
+
+            <div class="quick-card">
+              <i class="fa-solid fa-bell"></i>
+              <h3>Alertas internas</h3>
+              <p>Muestra una alerta visual cuando el inventario esté por debajo del mínimo.</p>
+              <button class="btn btn-light" id="checkAlertsBtn">Ver alertas</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       MODAL USUARIO
+  ========================== -->
+  <div class="modal" id="userModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Registrar nuevo usuario</h3>
+        <button class="close-btn" data-close="userModal">&times;</button>
+      </div>
+
+      <form id="userForm" class="modal-form">
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="userFullName">Nombre completo</label>
+            <input type="text" id="userFullName" required />
+          </div>
+
+          <div class="input-group">
+            <label for="userEmail">Correo electrónico</label>
+            <input type="email" id="userEmail" required />
+          </div>
+
+          <div class="input-group">
+            <label for="userRole">Rol</label>
+            <select id="userRole" required>
+              <option value="">Seleccione</option>
+              <option value="Cliente">Cliente</option>
+              <option value="Administrador">Administrador</option>
+              <option value="Vendedor">Vendedor</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="userStatus">Estado</label>
+            <select id="userStatus" required>
+              <option value="">Seleccione</option>
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+
+          <div class="input-group full-width">
+            <label for="userPassword">Contraseña</label>
+            <input type="password" id="userPassword" placeholder="Contraseña del usuario" />
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light" data-close="userModal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================
+       MODAL PRODUCTO
+  ========================== -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Registrar producto en inventario</h3>
+        <button class="close-btn" data-close="productModal">&times;</button>
+      </div>
+
+      <form id="productForm" class="modal-form">
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="productName">Nombre del producto</label>
+            <input type="text" id="productName" required />
+          </div>
+
+          <div class="input-group">
+            <label for="productCategory">Categoría</label>
+            <select id="productCategory" required>
+              <option value="">Seleccione</option>
+              <option value="televisores">Televisores</option>
+              <option value="soportes">Soportes</option>
+              <option value="neveras">Neveras</option>
+              <option value="lavadoras">Lavadoras</option>
+              <option value="accesorios">Accesorios</option>
+              <option value="perifericos">Periféricos</option>
+              <option value="monitores">Monitores</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="productPrice">Precio</label>
+            <input type="number" id="productPrice" required />
+          </div>
+
+          <div class="input-group">
+            <label for="productStock">Stock</label>
+            <input type="number" id="productStock" required />
+          </div>
+
+          <div class="input-group full-width">
+            <label for="productLocation">Ubicación en inventario</label>
+            <input type="text" id="productLocation" placeholder="Ej: Bodega A - Estante 3" required />
+          </div>
+
+          <div class="input-group full-width">
+            <label for="productImageUrl">URL de imagen</label>
+            <input type="text" id="productImageUrl" placeholder="https://..." />
+          </div>
+
+          <div class="input-group full-width">
+            <label for="productImageFile">Subir imagen</label>
+            <input type="file" id="productImageFile" accept="image/*" />
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light" data-close="productModal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar producto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================
+       TOAST
+  ========================== -->
+  <div class="custom-toast" id="customToast">
+    <span class="toast-message" id="toastMessage">Mensaje</span>
+    <button class="close-btn" id="closeToast">&times;</button>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/admin_usuarios.js"></script>
+</body>
+</html>

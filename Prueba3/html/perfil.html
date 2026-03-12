@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELECTROSHOP | Mi perfil</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <div class="user-menu">
+        <button class="user-menu-btn" id="userMenuToggle" type="button">
+          <div class="user-avatar" id="userAvatar"></div>
+          <div class="user-data">
+            <strong id="userName"></strong>
+            <span>Mi cuenta</span>
+          </div>
+        </button>
+
+        <div class="user-dropdown" id="userDropdown">
+          <a href="perfil.html">Mi perfil</a>
+          <a href="pedidos.html">Mis pedidos</a>
+          <a href="configuracion.html">Configuración</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <section class="profile-section">
+      <div class="container profile-grid">
+        <aside class="profile-sidebar">
+          <div class="profile-user-card">
+            <div class="profile-avatar" id="profileAvatar"></div>
+            <h2 id="profileName"></h2>
+            <p>Cliente registrado</p>
+          </div>
+
+          <nav class="profile-menu">
+            <a href="#info-personal" class="active">Información personal</a>
+            <a href="#resumen-cuenta">Resumen de cuenta</a>
+            <a href="#direcciones">Direcciones</a>
+          </nav>
+        </aside>
+
+        <div class="profile-content">
+          <div class="profile-box" id="info-personal">
+            <div class="profile-box-header">
+              <h2>Información personal</h2>
+            </div>
+
+            <div class="profile-info-grid">
+              <div class="profile-info-item">
+                <span>Nombre completo</span>
+                <strong id="profileFullName">José Enrique</strong>
+              </div>
+
+              <div class="profile-info-item">
+                <span>Correo electrónico</span>
+                <strong id="profileEmail">usuario@correo.com</strong>
+              </div>
+
+              <div class="profile-info-item">
+                <span>Teléfono</span>
+                <strong id="profilePhone">+57 300 000 0000</strong>
+              </div>
+
+              <div class="profile-info-item">
+                <span>Ciudad</span>
+                <strong id="profileCity">Medellín, Colombia</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-box" id="seguridad">
+            <div class="profile-box-header">
+              <h2>Seguridad</h2>
+            </div>
+
+            <div class="profile-security-grid">
+              <div class="security-card">
+                <h3>Contraseña</h3>
+                <p>Actualiza tu contraseña periódicamente para mantener tu cuenta segura.</p>
+                <button class="btn btn-light" type="button">Cambiar contraseña</button>
+              </div>
+
+              <div class="security-card">
+                <h3>Sesión</h3>
+                <p>Administra el acceso de tu cuenta y cierra sesión cuando lo necesites.</p>
+                <a href="login.html" class="btn btn-primary">Cerrar sesión</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app_web.js"></script>
+  <script src="../js/universal.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELECTROSHOP | Soportes</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html" class="active">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="carrito.html" class="btn btn-primary">🛒Carrito</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <div>
+          <span class="page-tag">Categoría · Soportes</span>
+          <h1>Soportes resistentes para TV y ordenadores</h1>
+          <p>
+            En ELECTROSHOP encuentras soportes funcionales, modernos y seguros para televisores,
+            monitores y ordenadores. Diseños pensados para optimizar espacio y mejorar la comodidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-box">
+          <a href="#" class="filter-chip active-chip" data-filter="todos">Todos</a>
+          <a href="#" class="filter-chip" data-filter="tv-fijo">TV fijo</a>
+          <a href="#" class="filter-chip" data-filter="tv-inclinable">TV inclinable</a>
+          <a href="#" class="filter-chip" data-filter="tv-brazo">TV brazo</a>
+          <a href="#" class="filter-chip" data-filter="monitor">Monitor</a>
+          <a href="#" class="filter-chip" data-filter="ordenador">Ordenador</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Soportes destacados</h2>
+          <p>
+            Esta sección se alimenta automáticamente desde el inventario de soportes y permite filtrarlos por tipo.
+          </p>
+        </div>
+
+        <div class="product-grid" id="soportesGrid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Más vendidos en soportes</h2>
+          <p>
+            Aquí verás los soportes con mayor rotación según las compras registradas.
+          </p>
+        </div>
+
+        <div class="featured-grid" id="soportesFeaturedGrid">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-strip">
+      <div class="container benefits-strip-grid">
+        <div class="mini-benefit-card">
+          <h3>Más seguridad</h3>
+          <p>Soportes diseñados para brindar estabilidad y un montaje confiable.</p>
+        </div>
+        <div class="mini-benefit-card">
+          <h3>Mejor aprovechamiento</h3>
+          <p>Optimiza el espacio y mejora la distribución de tus equipos en casa u oficina.</p>
+        </div>
+        <div class="mini-benefit-card">
+          <h3>Asesoría personalizada</h3>
+          <p>Te ayudamos a elegir el soporte ideal según el tamaño y el tipo de equipo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-box">
+        <h2>¿Necesitas el soporte correcto para tu equipo?</h2>
+        <p>
+          Escríbenos y te ayudamos a elegir la mejor opción para tu televisor, monitor o espacio de trabajo.
+        </p>
+        <a href="contacto.html" class="btn btn-primary">Hablar con un asesor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3>ELECTROSHOP</h3>
+        <p>Televisores, soportes y electrodomésticos para tu hogar.</p>
+      </div>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/app_web.js"></script>
+  <script src="../js/soportes_store.js"></script>
+</body>
+</html>

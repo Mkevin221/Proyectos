@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELECTROSHOP | Productos</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">ELECTRO<span>SHOP</span></div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html" class="active">Productos</a></li>
+        <li><a href="beneficios.html">Beneficios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="carrito.html" class="btn btn-primary">🛒Carrito</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <div>
+          <span class="page-tag">Catálogo ELECTROSHOP</span>
+          <h1 id="catalogTitle">Explora nuestros productos</h1>
+          <p id="catalogDescription">
+            Encuentra televisores, neveras, lavadoras y soportes con una presentación moderna,
+            clara y pensada para ayudar a tus clientes a elegir mejor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-box">
+          <a href="productos.html" class="filter-chip active-chip" data-category="all">Todos</a>
+          <a href="productos.html?categoria=televisores" class="filter-chip" data-category="televisores">Televisores</a>
+          <a href="productos.html?categoria=soportes" class="filter-chip" data-category="soportes">Soportes</a>
+          <a href="productos.html?categoria=neveras" class="filter-chip" data-category="neveras">Neveras</a>
+          <a href="productos.html?categoria=lavadoras" class="filter-chip" data-category="lavadoras">Lavadoras</a>
+          <a href="productos.html?categoria=accesorios" class="filter-chip" data-category="accesorios">Accesorios</a>
+          <a href="productos.html?categoria=perifericos" class="filter-chip" data-category="perifericos">Periféricos</a>
+          <a href="productos.html?categoria=monitores" class="filter-chip" data-category="monitores">Monitores</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Categorías principales</h2>
+          <p>
+            Explora rápidamente las líneas más importantes del catálogo y navega hacia los productos disponibles.
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-product-card">
+            <div class="category-image">Televisores</div>
+            <div class="category-content">
+              <h3>Televisores</h3>
+              <p>Modelos Hisense, Samsung y LG para entretenimiento, hogar y oficina.</p>
+              <a href="televisores.html" class="btn btn-primary">Ver productos</a>
+            </div>
+          </article>
+
+          <article class="category-product-card">
+            <div class="category-image">Neveras</div>
+            <div class="category-content">
+              <h3>Neveras</h3>
+              <p>Opciones funcionales y modernas para diferentes espacios y necesidades.</p>
+              <a href="neveras.html" class="btn btn-primary">Ver productos</a>
+            </div>
+          </article>
+
+          <article class="category-product-card">
+            <div class="category-image">Lavadoras</div>
+            <div class="category-content">
+              <h3>Lavadoras</h3>
+              <p>Equipos eficientes que combinan tecnología, capacidad y practicidad.</p>
+              <a href="lavadoras.html" class="btn btn-primary">Ver productos</a>
+            </div>
+          </article>
+
+          <article class="category-product-card">
+            <div class="category-image">Soportes</div>
+            <div class="category-content">
+              <h3>Soportes</h3>
+              <p>Soportes para televisores y ordenadores con diseño resistente y estable.</p>
+              <a href="soportes.html" class="btn btn-primary">Ver productos</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DINÁMICO -->
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="productsSectionTitle">Productos disponibles</h2>
+          <p id="productsSectionText">
+            Este catálogo se alimenta automáticamente desde el inventario registrado.
+          </p>
+        </div>
+
+        <div class="product-grid" id="catalogProductsGrid">
+          <!-- Productos cargados desde store.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTACADOS DINÁMICOS -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="featuredSectionTitle">Productos destacados</h2>
+          <p id="featuredSectionText">
+            Aquí se mostrarán automáticamente los productos más vendidos.
+          </p>
+        </div>
+
+        <div class="featured-grid" id="featuredProductsCatalogGrid">
+          <!-- Destacados cargados desde store.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-box">
+        <h2>¿Buscas una categoría específica?</h2>
+        <p>
+          Explora el catálogo completo o contáctanos para recibir asesoría personalizada sobre el producto ideal.
+        </p>
+        <a href="contacto.html" class="btn btn-primary">Solicitar asesoría</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3>ELECTROSHOP</h3>
+        <p>Televisores, soportes y electrodomésticos para tu hogar.</p>
+      </div>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/app_web.js"></script>
+  <script src="../js/productos_store.js"></script>
+</body>
+</html>
