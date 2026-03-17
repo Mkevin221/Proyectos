@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>NexoCash | Agenda de gastos</title>
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <section id="authView" class="auth">
+    <div class="auth-left">
+      <div>
+        <div class="logo-badge">✦ NexoCash</div>
+        <div class="hero" style="margin-top:28px;">
+          <h1>Tu dinero,<br>con otra vibra.</h1>
+          <p>
+            Una agenda de gastos con estilo <strong>premium</strong>, múltiples cuentas,
+            categorías inteligentes, paneles visuales y análisis por semana, mes o año.
+          </p>
+          <div class="preview-grid">
+            <div class="preview-card">
+              <span>Balance central</span>
+              <strong>Todo claro</strong>
+              <small>Visualiza ingresos, gastos y ahorro desde una sola pantalla.</small>
+            </div>
+            <div class="preview-card">
+              <span>Categorías</span>
+              <strong>Auto relleno</strong>
+              <small>Seleccionas una categoría y el formulario te propone nombre, ícono y cuenta.</small>
+            </div>
+            <div class="preview-card">
+              <span>Gráficas</span>
+              <strong>Más control</strong>
+              <small>Usa torta y barras para entender en qué se va tu plata.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chip">Diseño alternativo · oscuro · financiero · moderno</div>
+    </div>
+
+    <div class="auth-right">
+      <div class="glass auth-card">
+        <div class="tabs">
+          <button class="tab active" id="loginTab" type="button">Entrar</button>
+          <button class="tab" id="registerTab" type="button">Crear cuenta</button>
+        </div>
+
+        <div id="loginWrap">
+          <h2>Bienvenido</h2>
+          <p class="sub">Ingresa para seguir administrando tus cuentas y movimientos.</p>
+          <form id="loginForm" class="form-grid">
+            <div class="field">
+              <label>Correo</label>
+              <input type="email" id="loginEmail" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="field">
+              <label>Contraseña</label>
+              <input type="password" id="loginPassword" required placeholder="••••••••">
+            </div>
+            <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+          </form>
+        </div>
+
+        <div id="registerWrap" class="hidden">
+          <h2>Regístrate</h2>
+          <p class="sub">Tu usuario se guardará en el navegador para que puedas crear varias cuentas y volver a entrar.</p>
+          <form id="registerForm" class="form-grid">
+            <div class="field">
+              <label>Nombre</label>
+              <input type="text" id="registerName" required placeholder="Tu nombre">
+            </div>
+            <div class="field">
+              <label>Correo</label>
+              <input type="email" id="registerEmail" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="field">
+              <label>Contraseña</label>
+              <input type="password" id="registerPassword" required placeholder="Crea una contraseña">
+            </div>
+            <button class="btn btn-primary" type="submit">Crear usuario</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="logo-badge">✦ NexoCash</div>
+
+      <div class="card-mini">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">Usuario activo</div>
+        <div id="sidebarUserName" style="font-size:22px;font-weight:800;"></div>
+        <div style="color:#dce6f8;margin-top:6px;">Panel financiero personal</div>
+      </div>
+
+      <div class="menu" id="sidebarMenu">
+        <button class="menu-btn active" type="button" data-section="resumen">Resumen</button>
+        <button class="menu-btn" type="button" data-section="cuentas">Cuentas</button>
+        <button class="menu-btn" type="button" data-section="movimientos">Movimientos</button>
+        <button class="menu-btn" type="button" data-section="categorias">Categorías</button>
+        <button class="menu-btn" type="button" data-section="analisis">Análisis</button>
+      </div>
+
+      <div class="card-mini">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:8px;">Consejo</div>
+        <div style="line-height:1.6;color:#dce6f8;">
+          Separa tus gastos fijos, variables y ahorro en cuentas distintas para analizar mejor tus hábitos.
+        </div>
+      </div>
+
+      <button class="btn btn-danger" id="logoutBtn" type="button">Cerrar sesión</button>
+    </aside>
+
+    <section class="content">
+      <div class="topbar">
+        <div>
+          <h1 id="sectionTitle">Tablero financiero</h1>
+          <p id="welcomeText">Revisa tu dinero en tiempo real.</p>
+        </div>
+        <div class="actions" id="globalActions">
+          <button class="btn btn-soft" id="openAccountModal" type="button">+ Cuenta</button>
+          <button class="btn btn-primary" id="openMovementModal" type="button">+ Movimiento</button>
+        </div>
+      </div>
+
+      <!-- RESUMEN -->
+      <section class="content-section" id="section-resumen">
+        <section class="stat-grid">
+          <div class="glass stat">
+            <span>Saldo total</span>
+            <strong id="totalBalance">$0</strong>
+            <div class="chip">Disponible</div>
+          </div>
+          <div class="glass stat">
+            <span>Ingresos</span>
+            <strong id="totalIncome">$0</strong>
+            <div class="chip">Entradas</div>
+          </div>
+          <div class="glass stat">
+            <span>Gastos</span>
+            <strong id="totalExpenses">$0</strong>
+            <div class="chip">Salidas</div>
+          </div>
+          <div class="glass stat">
+            <span>Ahorro</span>
+            <strong id="totalSavings">$0</strong>
+            <div class="chip">Reservado</div>
+          </div>
+        </section>
+
+        <section class="glass panel">
+          <div class="panel-head">
+            <h3>Cuentas disponibles</h3>
+          </div>
+          <div id="accountsGrid" class="accounts"></div>
+        </section>
+
+        <section class="layout">
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Movimientos recientes</h3>
+              <div class="filters">
+                <input type="text" id="searchMovement" placeholder="Buscar...">
+                <select id="periodFilter">
+                  <option value="week">Semana</option>
+                  <option value="month" selected>Mes</option>
+                  <option value="year">Año</option>
+                  <option value="all">Todo</option>
+                </select>
+                <select id="typeFilter">
+                  <option value="all">Todos</option>
+                  <option value="ingreso">Ingresos</option>
+                  <option value="gasto">Gastos</option>
+                  <option value="ahorro">Ahorro</option>
+                </select>
+              </div>
+            </div>
+            <div id="movementList" class="movements"></div>
+          </div>
+
+          <div style="display:grid;gap:18px;">
+            <div class="glass panel">
+              <div class="panel-head"><h3>Distribución</h3></div>
+              <div class="chart-box"><canvas id="pieChart"></canvas></div>
+            </div>
+            <div class="glass panel">
+              <div class="panel-head"><h3>Comportamiento</h3></div>
+              <div class="chart-box"><canvas id="barChart"></canvas></div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- CUENTAS -->
+      <section class="content-section hidden" id="section-cuentas">
+        <section class="glass panel">
+          <div class="panel-head">
+            <h3>Todas tus cuentas</h3>
+            <button class="btn btn-soft" id="openAccountModalSecondary" type="button">+ Nueva cuenta</button>
+          </div>
+          <div id="accountsGridOnly" class="accounts"></div>
+        </section>
+      </section>
+
+      <!-- MOVIMIENTOS -->
+      <section class="content-section hidden" id="section-movimientos">
+        <section class="glass panel">
+          <div class="panel-head">
+            <h3>Todos los movimientos</h3>
+            <div class="filters">
+              <input type="text" id="searchMovementOnly" placeholder="Buscar...">
+              <select id="periodFilterOnly">
+                <option value="week">Semana</option>
+                <option value="month" selected>Mes</option>
+                <option value="year">Año</option>
+                <option value="all">Todo</option>
+              </select>
+              <select id="typeFilterOnly">
+                <option value="all">Todos</option>
+                <option value="ingreso">Ingresos</option>
+                <option value="gasto">Gastos</option>
+                <option value="ahorro">Ahorro</option>
+              </select>
+              <button class="btn btn-primary" id="openMovementModalSecondary" type="button">+ Nuevo</button>
+            </div>
+          </div>
+          <div id="movementListOnly" class="movements"></div>
+        </section>
+      </section>
+
+      <!-- CATEGORÍAS -->
+      <section class="content-section hidden" id="section-categorias">
+        <section class="glass panel">
+          <div class="panel-head">
+            <h3>Categorías configuradas</h3>
+          </div>
+          <div id="categoriesGrid" class="accounts"></div>
+        </section>
+      </section>
+
+      <!-- ANÁLISIS -->
+      <section class="content-section hidden" id="section-analisis">
+        <section class="layout">
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Distribución por categorías</h3>
+            </div>
+            <div class="chart-box">
+              <canvas id="pieChartOnly"></canvas>
+            </div>
+          </div>
+
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Comparativo por período</h3>
+            </div>
+            <div class="chart-box">
+              <canvas id="barChartOnly"></canvas>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal" id="movementModal">
+    <div class="glass modal-card">
+      <div class="panel-head">
+        <h3>Nuevo movimiento</h3>
+        <button class="btn btn-danger" data-close="movementModal" type="button">Cerrar</button>
+      </div>
+      <form id="movementForm" class="modal-grid">
+        <div class="field">
+          <label>Tipo</label>
+          <select id="movementType" required>
+            <option value="gasto">Gasto</option>
+            <option value="ingreso">Ingreso</option>
+            <option value="ahorro">Ahorro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Categoría base</label>
+          <select id="movementCategoryTemplate" required></select>
+        </div>
+        <div class="field">
+          <label>Nombre</label>
+          <input type="text" id="movementName" required>
+        </div>
+        <div class="field">
+          <label>Categoría visible</label>
+          <input type="text" id="movementCategoryName" required>
+        </div>
+        <div class="field">
+          <label>Monto</label>
+          <input type="number" id="movementAmount" min="0" step="0.01" required>
+        </div>
+        <div class="field">
+          <label>Cuenta</label>
+          <select id="movementAccount" required></select>
+        </div>
+        <div class="field full">
+          <label>Descripción</label>
+          <input type="text" id="movementDescription">
+        </div>
+        <div class="field">
+          <label>Fecha</label>
+          <input type="date" id="movementDate" required>
+        </div>
+        <div class="field">
+          <label>Emoji / Ícono</label>
+          <input type="text" id="movementIcon" maxlength="4">
+        </div>
+        <div class="full">
+          <button class="btn btn-primary" type="submit">Guardar movimiento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="accountModal">
+    <div class="glass modal-card" style="max-width:520px;">
+      <div class="panel-head">
+        <h3>Nueva cuenta</h3>
+        <button class="btn btn-danger" data-close="accountModal" type="button">Cerrar</button>
+      </div>
+      <form id="accountForm" class="account-form" style="margin-top:16px;">
+        <div class="field">
+          <label>Nombre de la cuenta</label>
+          <input type="text" id="accountName" required>
+        </div>
+        <div class="field">
+          <label>Tipo</label>
+          <select id="accountType" required>
+            <option>Cuenta</option>
+            <option>Efectivo</option>
+            <option>Tarjeta</option>
+            <option>Ahorro</option>
+            <option>Inversión</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Saldo inicial</label>
+          <input type="number" id="accountInitialBalance" min="0" step="0.01" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="confirm-modal hidden" id="confirmModal">
+  <div class="confirm-backdrop" id="confirmBackdrop"></div>
+
+  <div class="confirm-card">
+    <div class="confirm-icon">⚠️</div>
+    <h3 id="confirmTitle">Confirmar acción</h3>
+    <p id="confirmMessage">¿Seguro que deseas continuar?</p>
+
+    <div class="confirm-actions">
+      <button type="button" class="btn btn-soft" id="confirmCancelBtn">Cancelar</button>
+      <button type="button" class="btn btn-danger" id="confirmAcceptBtn">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+  <script src="../js/movimientos.js"></script>
+
+
+</body>
+</html>
